@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Editar Video</h1>
+        </div>
+        <div class="col-6">
+            <div class="d-flex justify-content-start m-2">
+                <a type="button" class="btn btn-secondary btn-sm" href="/admin/videos">Volver</a>
+            </div>
+        </div>
+        <div class="col-8 m-auto justify-content-center">
+            <form method="post" action="/videos/{{ video[0] }}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" class="form-control" name="imagen" id="imagen" aria-describedby="Imagen" placeholder="URL de la imagen..." value="{{ video[9] }}">
+                </div>
+                <div class="form-group">
+                    <label for="usuario">User</label>
+                    <select class="form-control" name="usuario" id="usuario">
+                        {% for user in users %}
+                            {% if user[0] == video[1] %}
+                                <option value="{{ user[0] }}" selected>{{ user[0] }}_{{ user[1] }} {{ user[2] }}</option>
+                            {% else %}
+                                <option value="{{ user[0] }}" >{{ user[0] }}_{{ user[1] }} {{ user[2] }}</option>
+                            {% endif %} 
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="Titulo" placeholder="Titulo..." value="{{ video[4] }}">
+                </div>
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" class="form-control" name="url" id="url" aria-describedby="URL" placeholder="URL..." value="{{ video[3] }}">
+                </div>
+                <div class="form-group">
+                    <label for="canal">Canal</label>
+                    <input type="text" class="form-control" name="canal" id="canal" aria-describedby="Canal" placeholder="Canal..." value="{{ video[5] }}">
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de publicación</label>
+                    <input type="text" class="form-control" name="fecha" id="fecha" aria-describedby="Fecha de publicación" placeholder="Fecha de publicación..." value="{{ video[6] }}">
+                </div>
+                <div class="form-group">
+                    <label for="visitas">Visitas</label>
+                    <input type="text" class="form-control" name="visitas" id="visitas" aria-describedby="Visitas" placeholder="Visitas..." value="{{ video[7] }}">
+                </div>
+                <div class="form-group">
+                    <label for="likes">Likes</label>
+                    <input type="text" class="form-control" name="likes" id="likes" aria-describedby="Likes" placeholder="Likes..." value="{{ video[8] }}">
+                </div>
+                <input type="hidden" name="action" value="update">
+                <br>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" value="Agregar User" class="btn btn-success mb-5">Editar Video</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

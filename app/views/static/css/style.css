@@ -1,0 +1,138 @@
+.footer {
+    background-color: #f2f2f2 !important;
+    color: black;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Martel Sans', sans-serif;
+}
+
+#header{
+    background-color: #de1d22 !Important;
+}
+
+.buttonLink{
+    text-decoration:none !Important;
+}
+
+#indexMain{
+    background-image: url("../img/global/banner.jpg");
+    height: 84vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:auto;
+}
+
+
+.divPrincipal{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+}
+
+.divPrincipal h1{
+    font-size: 4rem;
+}
+
+.divPrincipal h2{
+    margin-top: 2%;
+    font-size: 2rem;
+}
+
+.divPrincipal h3{
+    margin-top: 2%;
+    font-size: 1.5rem;
+}
+
+.divPrincipal button{
+    margin-top: 2%;
+}
+
+
+
+
+
+.card {
+    overflow: hidden !important;
+    display:inline-block !important;
+    position: relative !important;
+}
+
+  
+.card:hover .card-img-top {
+    -webkit-transform: scale(1.1) !important; 
+    -moz-transform: scale(1.1) !important;
+    -o-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+    transition: all 0.5s ease;
+}
+
+.card-img-top {
+	-webkit-transition: all .4s ease-in-out !important;
+	-moz-transition: all .4s ease-in-out !important;
+	-o-transition: all .4s ease-in-out !important;
+	-ms-transition: all .4s ease-in-out !important;
+    /* width: 29.688rem !important;
+    height: 16.688rem !important; */
+    /* width: 475px !important;
+    height: 267px !important; */
+    object-fit: cover !important;
+}
+
+.card-body{
+    overflow: hidden !important;
+    display:inline-block !important;
+    position: relative !important;
+    
+}
+
+.linkVideo:hover, .linkVideo:visited, .linkVideo:link, .linkVideo:active{
+    color: #000000;
+    text-decoration: none;
+}
+
+.imgPerfil{
+    object-fit: cover;
+}
+
+.imagenPanelUsuario{
+    height: 6rem;
+    width: 6rem;
+}
+
+.canalVideo{
+    color: slategray !important;
+    margin-left: 0px;
+    font-size: 0.8rem;
+    padding-left: 0px;
+    height:10px
+}
+
+.divCanalVideo{
+    padding-left: 0px;
+}
+
+
+
+.lineaDivisoriaCardBody{
+    margin:2px 0px 8px;
+}
+
+.imagenUsuario{
+    object-fit: cover;
+    width: 8rem;
+    height: 8rem;
+}
+
+.imagenPanelVideo{
+    height: 4rem;
+    width: 4rem;
+}
+
+.verticalCenter{
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}

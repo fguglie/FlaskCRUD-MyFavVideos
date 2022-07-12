@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-12">
+            <div class="d-flex justify-content-end m-2">
+                <a type="button" class="btn btn-primary btn-sm" href="crear" class="buttonLink">Nuevo Usuario</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-12 justify-content-center text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="align-middle" scope="col">Imagen</th>
+                    <th class="align-middle" scope="col">Nombre</th>
+                    <th class="align-middle" scope="col">Apellido</th>
+                    <th class="align-middle" scope="col">Email</th>
+                    <th class="align-middle" scope="col">Perfil</th>
+                    <th class="align-middle" scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td class="align-middle"><img class="imagenUsuario" src="{{ url_for('static', filename='img/users/') }}{{ user[3] }}" alt="Imagen User" class="imagenPanelUsuario"></td>
+                    <td class="align-middle">{{ user[1] }}</td>
+                    <td class="align-middle">{{ user[2] }}</td>
+                    <td class="align-middle">{{ user[4] }}</td>
+                    <td class="align-middle">{% if user[5] == 1 %}
+                        Administrador
+                   {% else %}
+                        Usuario
+                   {% endif %}</td>
+                    <td class="align-middle"> 
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-end">
+                                <form action="editar/{{ user[0] }}" method="GET">
+                                    <button class="btn btn-success  " type="submit">Editar</button>
+                                </form>
+                            </div>
+                            <div class="col-6 d-flex justify-content-start">
+                                <form action="borrar/{{ user[0] }}" method="POST">
+                                    <button class="btn btn-danger" type="submit">Borrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>      
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

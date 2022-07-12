@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-6">
+            <div class="d-flex justify-content-start m-2">
+                <a type="button" class="btn btn-secondary btn-sm" href="/admin/videos">Volver</a>
+            </div>
+        </div>
+        <div class="col-8 m-auto justify-content-center">
+            <form method="post" action="/admin/videos/crear" enctype="multipart/form-data">
+                <div class="form-group w-100 row">
+                    <div class="col-1">
+                        <label for="id_usuario">Usuario</label> 
+                    </div>
+                    <div class="col-11">
+                        <select class="form-select w-100" name="id_usuario" id="id_usuario">
+                            {% for user in users %}<option value="{{user[0]}}">{{user[0]}}_{{user[1]}} {{user[2]}}</option>{% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="url">URL del Video</label>
+                    <input type="text" class="form-control" name="url" id="url" aria-describedby="URL del Video" placeholder="URL del Video...">
+                </div>
+                <br>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" value="Crear video" class="btn btn-primary">Crear Video!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
